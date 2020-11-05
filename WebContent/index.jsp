@@ -7,9 +7,13 @@
 <title>Locadora</title>
 </head>
 <body> 
-	 <p>
-	 	<h1>Página Inicial</h1>
-	 </p>
-	 <p> </p>
+	<h2>Sistema Locadora Digital</h2>
+	<table>
+		<tr>
+			<td><a href= "/Locadora-Java-Web/Genero">Cadastros</a></td>
+			<td><a href= "">Locacao</a></td>
+		</tr>
+	</table>
+	
 </body>
 </html>
