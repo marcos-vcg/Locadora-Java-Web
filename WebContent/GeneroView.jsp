@@ -10,7 +10,7 @@
 	<body>
 		<table border="1">
 			<thead>
-      			<tr><td>Id</td><td>Gênero</td></tr>
+      			<tr><th>Id</th><th>Gênero</th></tr>
    			</thead>
    			
    			<tbody>
