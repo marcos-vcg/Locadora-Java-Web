@@ -1,5 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -10,26 +14,18 @@
 	<body>
 		<table border="1">
 			<thead>
-      			<tr><th>Id</th><th>Gênero</th></tr>
+      			<tr><th>Id</th><th>GÃªnero</th></tr>
    			</thead>
    			
    			<tbody>
-				<%@ page import="java.util.*, dao.*, model.*" %>
+				<%@ page import="java.util.*, dao.*,bean.*" %>
 				
-				<%
-				DataSource dataSource = new DataSource();
-				GeneroDAO generoDao = new GeneroDAO(dataSource);
-				ArrayList<Genero> generos = generoDao.readAll();
-			
-		      	for (Genero genero: generos ) {
-				%>
-		      	<tr>
-			        <td><%=genero.getId() %></td> 
-			        <td><%=genero.getNome() %></td>
+				<jsp: useBean id="generos" scope="request" class="bean.Genero"/>
+				<c:forEach var="contato" items="${generos}"/>
+				<tr>
+					<td>${genero.getId()}</td>
+					<td>${genero.getNome()}</td> 
 		      	</tr>
-		    	<%
-		      	}
-		    	%>
 	    	</tbody>
 	  </table>
 	</body>

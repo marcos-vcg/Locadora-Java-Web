@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import model.Genero;
+import bean.Genero;
 
 public class GeneroDAO {
 	private DataSource datasource;
@@ -66,10 +66,10 @@ public class GeneroDAO {
 		return null;
 	}
 	
-	public void inserir(String nome) {
+	public void inserir(Genero genero) {
 		try {
 			
-			String SQL = "INSERT INTO " + tabela + " (nome) VALUES ('" + nome + "');";
+			String SQL = "INSERT INTO " + tabela + " (nome) VALUES ('" + genero.getNome() + "');";
 			java.sql.PreparedStatement ps = datasource.getConnection().prepareStatement(SQL);
 			ps.executeUpdate(SQL);						// Usado para fazer qualquer alteração. Não tem nenhum retorno
 			ps.close();
@@ -79,10 +79,10 @@ public class GeneroDAO {
 		}
 	}
 	
-	public void editar(Integer id, String nome) {
+	public void editar(Genero genero) {
 		try {
 			
-			String SQL = "UPDATE " + tabela + " SET nome = '" + nome + "' WHERE id = " + id + ";" ;			// id é int, não colocar aspassimples
+			String SQL = "UPDATE " + tabela + " SET nome = '" + genero.getNome() + "' WHERE id = " + genero.getId() + ";" ;			// id é int, não colocar aspassimples
 			java.sql.PreparedStatement ps = datasource.getConnection().prepareStatement(SQL);
 			ps.executeUpdate(SQL);
 			ps.close();
@@ -92,10 +92,10 @@ public class GeneroDAO {
 		}
 	}
 	
-	public void apagar(Integer id) {
+	public void apagar(Genero genero) {
 		try {
 			
-			String SQL = "DELETE FROM " + tabela + " WHERE id = " + id + ";" ;			// id é int, não colocar aspassimples
+			String SQL = "DELETE FROM " + tabela + " WHERE id = " + genero.getId() + ";" ;			// id é int, não colocar aspassimples
 			java.sql.PreparedStatement ps = datasource.getConnection().prepareStatement(SQL);
 			ps.executeUpdate(SQL);												// Usado para fazer qualquer alteração. Não tem nenhum retorno
 			ps.close();
