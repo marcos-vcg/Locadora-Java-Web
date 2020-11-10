@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ page import="java.util.*, dao.*,bean.*" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,8 +18,6 @@
    			</thead>
    			
    			<tbody>
-				<%@ page import="java.util.*, dao.*,bean.*" %>
-				
 				<jsp: useBean id="generos" scope="request" class="bean.Genero"/>
 				<c:forEach var="contato" items="${generos}"/>
 				<tr>
