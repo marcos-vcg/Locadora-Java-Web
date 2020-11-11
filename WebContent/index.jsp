@@ -11,8 +11,8 @@
 		<h2>Sistema Locadora Digital</h2>
 		<table>
 			<tr>
-				<td><a href= "/Locadora-Java-Web/Genero">Cadastros</a></td>
-				<td><a href= "/teste">Locacao</a></td>
+				<td><a href= "Genero">Cadastros</a></td>
+				<td><a href= "teste">Locacao</a></td>
 			</tr>
 		</table>
 		

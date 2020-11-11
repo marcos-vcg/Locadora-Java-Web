@@ -18,7 +18,7 @@ import dao.GeneroDAO;
 /**
  * Servlet implementation class GeneroServlet
  */
-@WebServlet("/Genero")
+@WebServlet(urlPatterns = {"/Genero", "/a"})
 public class GeneroServlet extends HttpServlet {
 
 
